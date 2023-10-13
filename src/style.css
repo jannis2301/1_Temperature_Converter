@@ -1,0 +1,80 @@
+:root {
+  --main-bg-clr: #0072ff;
+  --white-clr: #fff;
+  --black-clr: #000;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./assets/sunny-weather.jpg') center no-repeat;
+  background-size: cover;
+  background-color: var(--main-bg-clr);
+  color: var(--white-clr);
+  text-align: center;
+  overflow-y: hidden;
+}
+
+p {
+  margin: 0;
+  line-height: 23px;
+  text-align: left;
+}
+
+.temperature-converter {
+  --max-width: 600px;
+  max-width: var(--max-width);
+  width: 92dvw;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: var(--white-clr);
+  color: var(--black-clr);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+}
+
+.title {
+  margin: 0 0 20px;
+}
+
+.description {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.field-container {
+  max-width: 240px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px 0;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
