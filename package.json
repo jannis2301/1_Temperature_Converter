@@ -5,12 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "vite --host",
-    "coverage": "vitest run --coverage",
     "test": "vitest run",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "build": "vite build",
-    "preview": "vite preview"
+    "coverage": "vitest run --coverage",
+    "build": "vite build"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^0.34.6",
