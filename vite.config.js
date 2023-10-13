@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  base: './temperature-converter/',
+  base: '/temperature-converter/',
   test: {
     environment: 'happy-dom',
     coverage: {
@@ -26,14 +25,6 @@ export default defineConfig({
     dts({
       include: './src',
       outDir: './dist/types',
-    }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'src/component-navigation-menu-button.css',
-          dest: '.',
-        },
-      ],
     }),
   ],
 })
