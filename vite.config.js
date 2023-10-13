@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   base: '/temperature-converter/',
@@ -14,10 +13,4 @@ export default defineConfig({
     reporters: ['junit', 'default'],
     outputFile: './target/surefire-reports/junit.xml',
   },
-  plugins: [
-    dts({
-      include: './src',
-      outDir: './dist/types',
-    }),
-  ],
 })
