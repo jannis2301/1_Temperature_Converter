@@ -14,13 +14,6 @@ export default defineConfig({
     reporters: ['junit', 'default'],
     outputFile: './target/surefire-reports/junit.xml',
   },
-  build: {
-    sourcemap: true,
-    lib: {
-      entry: './src/index.ts',
-      formats: ['es'],
-    },
-  },
   plugins: [
     dts({
       include: './src',
