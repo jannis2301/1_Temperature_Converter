@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "vite --host",
-    "test": "vitest run --coverage",
+    "coverage": "vitest run --coverage",
+    "test": "vitest run",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
