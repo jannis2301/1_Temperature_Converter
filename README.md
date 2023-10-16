@@ -1,4 +1,4 @@
-# **Temperature Converter**
+# **Temperature Converter** &nbsp; ![Code Coverage](https://img.shields.io/badge/code--coverage-100%25-green)
 
 The Temperature Converter App converts Celsius temperatures to Kelvin and Fahrenheit.
 
