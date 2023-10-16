@@ -15,6 +15,16 @@ html {
   box-sizing: inherit;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   height: 100vh;
   margin: 0;
@@ -25,24 +35,25 @@ body {
   color: var(--white-clr);
   text-align: center;
   overflow-y: hidden;
-}
-
-p {
-  margin: 0;
-  line-height: 23px;
-  text-align: left;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .temperature-converter {
   --max-width: 600px;
   max-width: var(--max-width);
   width: 92dvw;
-  margin: 20px auto 0;
+  margin: 40px auto 0;
   padding: 20px;
   background: var(--white-clr);
   color: var(--black-clr);
   border-radius: 10px;
   box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+}
+
+p {
+  margin: 0;
+  line-height: 23px;
+  text-align: left;
 }
 
 .title {
