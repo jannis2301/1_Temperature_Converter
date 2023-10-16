@@ -20,13 +20,19 @@ describe('TemperatureConverter', () => {
 
   // Cleanup after each test
   afterEach(() => {
-    converter.destroy()
     document.body.innerHTML = ''
   })
 
+  it('should throw an error for an invalid selector', () => {
+    const invalidSelector = '.noElement'
+    expect(() => converter.throw(invalidSelector)).toThrowError(
+      `Element with selector ${invalidSelector} is missing`
+    )
+  })
+
   it('should convert Celsius to Kelvin', () => {
-    const celsiusInput = converter['celsiusInput']
-    const kelvinOutput = converter['kelvinOutput']
+    const celsiusInput = converter.getCelsiusInput()
+    const kelvinOutput = converter.getKelvinOutput()
 
     celsiusInput.value = '25'
     celsiusInput.dispatchEvent(new Event('keyup'))
@@ -35,8 +41,8 @@ describe('TemperatureConverter', () => {
   })
 
   it('should convert Celsius to Fahrenheit', () => {
-    const celsiusInput = converter['celsiusInput']
-    const fahrenheitOutput = converter['fahrenheitOutput']
+    const celsiusInput = converter.getCelsiusInput()
+    const fahrenheitOutput = converter.getFahrenheitOutput()
 
     celsiusInput.value = '25'
     celsiusInput.dispatchEvent(new Event('keyup'))
@@ -45,9 +51,9 @@ describe('TemperatureConverter', () => {
   })
 
   it('should handle invalid input', () => {
-    const celsiusInput = converter['celsiusInput']
-    const kelvinOutput = converter['kelvinOutput']
-    const fahrenheitOutput = converter['fahrenheitOutput']
+    const celsiusInput = converter.getCelsiusInput()
+    const kelvinOutput = converter.getKelvinOutput()
+    const fahrenheitOutput = converter.getFahrenheitOutput()
 
     celsiusInput.value = 'invalid' // Invalid input
     celsiusInput.dispatchEvent(new Event('keyup'))
