@@ -5,11 +5,10 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     coverage: {
-      provider: 'coverage-v8',
+      provider: 'istanbul',
       reporter: ['clover', 'html'],
       reportsDirectory: 'target/clover',
     },
-    setupFiles: ['./test/setup.ts'],
     reporters: ['junit', 'default'],
     outputFile: './target/surefire-reports/junit.xml',
   },
