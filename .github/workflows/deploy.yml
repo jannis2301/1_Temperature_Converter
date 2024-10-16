@@ -17,8 +17,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
       - name: Install dependencies
-        uses: bahmutov/pnpm-install@v1
+        run: pnpm install
 
       - name: Build project
         run: pnpm run build
